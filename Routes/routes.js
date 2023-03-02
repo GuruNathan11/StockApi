@@ -3,7 +3,7 @@ let router = require('express').Router();
 router.get('/',function(req,res){
     res.json({
         status : 'API Works',
-        message : "Welcome to Stock-Market"
+        message : "Welcome to Saving"
     })
 });
 
@@ -36,6 +36,9 @@ router.route('/:user_id')
 .get(Controller.view)
 .patch(Controller.update)
 .put(Controller.update)
-.delete(Controller.Delete);
+.delete(Controller.Delete)
+
+router.route('/del-all')
+.post(Controller.delall)
 
 module.exports = router;
