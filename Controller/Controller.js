@@ -24,3 +24,8 @@ exports.Delete = function(err,save){
     Service.Service_Delete(err,save);
     if (err) return console.error(err);
 };
+
+exports.delall = function(err,save){
+    Service.Service_delall(err,save);
+    if (err) return console.error(err);
+};
