@@ -1,6 +1,7 @@
 var mongoose = require('mongoose');
+var { Schema } = mongoose;
 
-var Schema = mongoose.Schema({
+var Schema = new Schema({
     name:{
         required : true,
         type     : String
@@ -15,8 +16,9 @@ var Schema = mongoose.Schema({
     type:{
         type     : String,
         default  : "Stock"
-    }
-},{timestamps    : true});
+    },
+    
+},{timestamps    : true,versionKey:false});
 
 Schema.path('name').validate(async (name) => {
     const nameCount = await mongoose.models.user.countDocuments({ name })
