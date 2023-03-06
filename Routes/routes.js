@@ -12,6 +12,8 @@ const countermodel =require('../Model/Models');
 router.post('/add',(req,res) => {
     var user = new users();
     user.name = req.body.name;
+         user.stock_key = req.body.stock_key;
+    user.stock_type = req.body.stock_type;
     user.save((err,users) => {
         if(err) {
             return res.status(400).send({
