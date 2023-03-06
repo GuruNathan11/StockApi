@@ -17,6 +17,14 @@ var Schema = new Schema({
         type     : String,
         default  : "Stock"
     },
+    stock_type:{
+        required : true,
+        type     : String
+    },
+    stock_key:{
+        required : true,
+        type     : String
+    }
     
 },{timestamps    : true,versionKey:false});
 
