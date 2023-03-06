@@ -45,6 +45,8 @@ exports.Dao_update = function (req,callback) {
     users.findById({_id:req.params.user_id}, function(err,user){
         if(err) callback.send(err);
         user.name = req.body.name;
+             user.stock_key = req.body.stock_key;
+    user.stock_type = req.body.stock_type;
         user.save(function(err){
             if(err) callback.json(err);
             callback.json({
